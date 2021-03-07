@@ -11,6 +11,6 @@ public class PCGameController {
     public String home(ModelMap map){
         map.addAttribute("pcGameForm", new PCGameForm());
         map.addAttribute("createMessage", "Create PC Game");
-        return "pcgame";
+        return "pcgame.html";
     }
 }
