@@ -24,5 +24,9 @@ public class FileDataService {
         FileData fileToUpdate = getById(fileId);
         return fileDataRepository.save(fileData);
     }
+
+    public void delete(String fileId) {
+        fileDataRepository.deleteById(fileId);
+    }
 }
 

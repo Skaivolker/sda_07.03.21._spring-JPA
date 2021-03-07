@@ -1,6 +1,7 @@
 package com.example.demo.ex9;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,19 @@ public class FileDataController {
                            @RequestBody FileData fileData) {
         return fileDataService.update(fileId, fileData);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") String fileId) {
+        try {
+            fileDataService.delete(fileId);
+        } catch (EmptyResultDataAccessException ex){
+            return ResponseEntity
+                    .status(HttpStatus.NO_CONTENT)
+                    .body("No file data with provided id found.");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
+
 
 }
 
