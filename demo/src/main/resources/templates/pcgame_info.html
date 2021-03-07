@@ -2,9 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>PCGame</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="container my-5">
+    <h2 class="mb-5"> INFO </h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div th:text="${pcgame_info.title}"/>
+            <div th:text="${pcgame_info.producer}"/>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
