@@ -32,5 +32,11 @@ public class FileDataController {
                 .body(savedFileData);
     }
 
+    @PutMapping("/{id}")
+    public FileData update(@PathVariable("id") String fileId,
+                           @RequestBody FileData fileData) {
+        return fileDataService.update(fileId, fileData);
+    }
+
 }
 
