@@ -18,7 +18,7 @@ public class FileData {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    private Long id;
+    private String id;
 
     @Column(name = "file_name")
     private String fileName;
