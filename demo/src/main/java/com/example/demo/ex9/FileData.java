@@ -16,7 +16,7 @@ public class FileData {
     private String extension;
 
     @Column(name = "size_in_kb")
-    private int sizeInKb;
+    private Long sizeInKb;
 
     @Column(name = "content")
     private String content;
