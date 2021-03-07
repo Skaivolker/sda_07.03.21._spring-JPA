@@ -1,21 +1,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1671.6">
-  <style type="text/css">
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 12.0px}
-    span.s1 {font-kerning: none}
-  </style>
+  <meta charset="UTF-8">
+  <title>PCGame</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="/webjars/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 19.0px"><span class="s1"><b></b></span><br></h2>
-<p class="p2"><span class="s1">Title<span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1">Producer<span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s1"></span><br></p>
+<div class="container my-5">
+  <h2 class="mb-5" th:text="${createMessage}"></h2>
+  <div class="row">
+    <div class="col-md-6">
+      <form action="#" th:action="@{/saveGame}" th:object="${pcGameForm}" method="post">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="title" class="col-form-label">Title</label>
+            <input type="text" th:field="${pcGameForm.title}" class="form-control" id="title" placeholder="Title">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="producer" class="col-form-label">Producer</label>
+            <input type="text" th:field="${pcGameForm.producer}" class="form-control" id="producer"
+                   placeholder="Producer">
+          </div>
+          <label>
+            Genre:
+            <input type="text" th:field="*{genre}">
+          </label>
+
+          <label>
+            Minimum Age:
+            <input type="number" th:field="*{minimumAge}" min="3">
+          </label>
+
+          <label>
+            AAA?:
+            <input type="checkbox" th:field="*{isAAA}">
+          </label>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mt-5">
+            <input type="submit" class="btn btn-primary" value="Save game">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
+
 </html>
