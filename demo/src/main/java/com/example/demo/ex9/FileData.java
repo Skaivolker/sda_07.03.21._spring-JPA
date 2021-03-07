@@ -1,8 +1,17 @@
 package com.example.demo.ex9;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity(name = "files_data")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class FileData {
 
     @Id
