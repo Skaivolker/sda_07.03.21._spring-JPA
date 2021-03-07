@@ -1,10 +1,12 @@
 package com.example.demo.ex9;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class TestDataLoadService implements CommandLineRunner {
 
@@ -24,6 +26,8 @@ public class TestDataLoadService implements CommandLineRunner {
                         FileData.builder().fileName("smt4").build()
                 )
         );
+        List<FileData> all = fileDataRepository.findAll();
+        log.info(String.valueOf(all));
 
     }
 }

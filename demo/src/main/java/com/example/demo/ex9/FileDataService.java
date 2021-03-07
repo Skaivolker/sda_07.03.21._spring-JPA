@@ -16,5 +16,8 @@ public class FileDataService {
         return fileDataRepository.findById(fileId).orElseThrow(()->new SdaException("No file exception"));
     }
 
+    public FileData save(FileData fileData) {
+        return fileDataRepository.save(fileData);
+    }
 }
 
