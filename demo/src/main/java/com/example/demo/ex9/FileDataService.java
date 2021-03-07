@@ -1,7 +1,5 @@
 package com.example.demo.ex9;
 
-import com.example.demo.ex9.FileDataWrap;
-import com.example.demo.ex9.FileDataRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
