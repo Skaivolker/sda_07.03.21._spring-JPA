@@ -9,7 +9,4 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FileDataWrap {
     private List<FileData> all;
-
-    public FileDataWrap(List<FileData> all) {
-    }
 }
