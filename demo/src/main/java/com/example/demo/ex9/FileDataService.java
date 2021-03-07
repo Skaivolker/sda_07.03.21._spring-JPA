@@ -11,5 +11,10 @@ public class FileDataService {
     public FileDataWrap getAll() {
         return new FileDataWrap(fileDataRepository.findAll());
     }
+
+    public FileData getById(String fileId){
+        return fileDataRepository.findById(fileId).orElseThrow(()->new SdaException("No file exception"));
+    }
+
 }
 
